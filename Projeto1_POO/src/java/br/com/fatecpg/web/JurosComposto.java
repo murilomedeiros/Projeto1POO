@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "JurosComposto", urlPatterns = {"/juros-composto"})
 public class JurosComposto extends HttpServlet {
-
+//
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,41 +38,43 @@ public class JurosComposto extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Juro Composto</title>");            
+            out.println("<title>Juros Composto</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<form>");
-            out.println("<fieldset>");
-            out.println("<legend>Calculo de Juros Composto</legend>");
+            
+            out.println("<h1>Calculo de Juros Composto</h1>");
+            
             out.println("Capital:\n"
-                    + "<input type='number' name='c' step='0.01' style='margin-right: 1%'>");
+                    + "<input type='number' name='c' step='0.01' style='margin-right: 1%' required>");
+            
             out.println("Taxa de Juros(%.a.m):\n"
-                    + "<input type='number' name='j' step='0.0001' style='margin-right: 1%'>");
+                    + "<input type='number' name='j' step='0.0001' style='margin-right: 1%' required>");
+            
             out.println("Periodo(Meses):\n"
-                    + "<input type='number' name='p' step='1' style='margin-right: 1%'>");
+                    + "<input type='number' name='p' step='1' style='margin-right: 1%' required>");
+            
             out.println("<input type='submit' value='Calcular'>");
-            out.println("</fieldset>");
+            
             out.println("</form><br>");
             double c, j, p, m;
             p = 0; j = 0; m = 0;
             try{
-               if(request.getParameter("c") != null || request.getParameter("j") != null || request.getParameter("p") != null) {
+               if(request.getParameter("c") != null && request.getParameter("j") != null && request.getParameter("p") != null) {
                    c = Double.parseDouble(request.getParameter("c"));
                    j = Double.parseDouble(request.getParameter("j"));
                    p = Double.parseDouble(request.getParameter("p"));
                    m = c;
-                   
-               }
+               }    
             }
             catch(Exception Ex) {
-                //MELHORAR TRATAMENTO DE ERRO
-                out.println("<h2 style='color: red'>Dado(s) Inválido</h2>");
+                out.println("<h3 style='color: red'>Ocorreu um erro</h3>");
             }
             
             
             for(int i = 1; i <= p; i++) {
                 if(i == 1)
-                    out.println("<table border='1' width='80%' style='text-align:center; margin-left: 10%'><tr><th>Mês</th><th>Juros(R$)</th><th>Montante(R$)</th></tr>");
+                    out.println("<table border='1' width='60%' style='text-align:center; margin-left: 20%'><tr><th>Mês</th><th>Juros(R$)</th><th>Montante(R$)</th></tr>");
                 out.println("<tr><td>"+ i +"</td><td>"+ new DecimalFormat("0.00").format(((j/100)*m)) +"</td><td>"+ new DecimalFormat("0.00").format(m + ((j/100)*m)) +"</td></tr>");
                 m = m + ((j/100)*m);
                 if(i == p)
