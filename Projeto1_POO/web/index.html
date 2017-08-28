@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Música para todos - Spotify</title>
-        <link rel="icon" href="res/images/screen-graphic.gif">
+        <title>Calculadora Juros</title>
+        <link rel="icon" href="res/images/calculator_46872.png">
         <!-- Bootstrap -->
         <link href="res/styles/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="res/styles/style.css" rel="stylesheet" type="text/css"/>
@@ -19,30 +19,108 @@
                 <div class="navbar-header">
                     <!-- botao -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-bar">
-                        
+
                         <span class="sr-only">alterar navegacao</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    
+
                     <a href="index.html" class="navbar-brand">
-                        <span >Home</span>
+                        <img id="logo-img" src="res/images/calculator_46872.png" alt="">
                     </a>
-                    
+
                 </div>
                 <!-- navbar Murilo -->
                 <div class="collapse navbar-collapse" id="nav-bar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Juros Simples</a></li>                      
-                        <li><a href="#">Juros Composto</a></li>                      
+                        <li><a href="#team">Equipe</a></li>
+                        <li class="divisor" role="separator"></li>
+                        <li><a href="#">Juros Simples</a></li>
+                        <li><a href="#">Juros Composto</a></li> 
                     </ul>
                 </div>
-                
-                
             </div><!-- /container -->
         </nav><!-- /nav -->
 
+        <!-- texto capa -->
+        <section id="text-cover">
+            <div class="container cover">
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="text-cover">
+                            <h1>Calculadora de Juros</h1>
+                            <h3>Essa aplicacao WEB tem como finalidade calcular o montante de uma aplicacao inicial tanto aplicando em juros simples quanto juros composto.</h3>
+                            <a href="#" id="btn-simple" class="btn btn-default btn-custom btn-lg">Calcular juros simples</a>
+                            <a href="#" id="btn-compound" class="btn btn-warning btn-custom btn-lg">Calcular juros Composto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /texto capa -->
+
+        <!-- conteudo team -->
+
+        <section id="team">
+            <div class="container">
+                <div class="row container-equip">
+
+                    <h2 class="text-center" style="color: grey;">Equipe</h2> <hr class="bottom-line3"><br><br>
+                    <div class="col-md-3 member-team">
+                        <img src="res/images/member1.jpg" alt=""/>
+                        <h2>Adalberto Junior</h2>
+                        <p class="title">CIO</p>
+                        <p>Responsavel desenvolvimento da logica do juros composto (Back-end).</p>
+                        <p>Some text that describes .</p>
+                        <a href="https://www.facebook.com/adalberto.rodriguesteixeirajunior" target="_blank"><img class="icons" src="res/images/facebook.png" alt=""/></a>
+                        <a href="https://www.linkedin.com/in/adalberto-j-597249114" target="_blank"><img class="icons" src="res/images/linkedin.png" alt=""/></a>
+                        <a href="https://github.com/AdalbertoRodrigues" target="_blank"><img class="icons" src="res/images/github.png" alt=""/></a>
+                    </div>
+                    <div class="col-md-3 member-team" >
+                        <img  src="res/images/member3.jpg" alt=""/>
+                        <h2>Diogo Pacheco</h2>
+                        <p class="title">CTO</p>
+                        <p>Responsavel desenvolvimento da logica do juros simples (Back-end).</p>
+                        <p>diogopereira1992@outlook.com</p>
+                        <a href="https://www.facebook.com/diogo.pacheco.184" target="_blank"><img class="icons" src="res/images/facebook.png" alt=""/></a>
+                        <a href="https://github.com/DiogoPachecoPereira" target="_blank"><img class="icons" src="res/images/github.png" alt=""/></a>
+                    </div>
+                    <div class="col-md-3 member-team">
+                        <img  src="res/images/member2.jpg" alt=""/>
+                        <h2>Murilo Medeiros</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Responsavel desenvolvimento da aparencia da interface (Front-end).</p>
+                        <p>murilo_medeiros98@hotmail.com</p>
+                        <a href="https://www.facebook.com/murilo.meedeiros" target="_blank"><img class="icons" src="res/images/facebook.png" alt=""/></a>
+                        <a href="https://www.linkedin.com/in/murilo-medeiros-630219135/" target="_blank"><img class="icons" src="res/images/linkedin.png" alt=""/></a>
+                        <a href="https://github.com/murilomedeiros" target="_blank"><img class="icons" src="res/images/github.png" alt=""/></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="container" >
+                <div class="row">
+                    <div class="col-md-4">
+                        <img style="width: 40px; height: 40px" src="res/images/LogoTransp.png" alt=""/>
+                    </div>
+                    <div class="col-md-6" style="margin-right: -15px; padding-left: 0px;">
+                        <ul class="nav">
+                            <li><a href="">Home</a></li>
+                            <li><a href="#team">Equipe</a></li>
+                            <li><a href="">Juros Simples</a></li>
+                            <li><a href="">Juros Compostos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="footer-bottom text-center">
+            <p>Copyright&copy; - Desenvolvido pela TGS</p>
+        </div>
+
+        <!-- /conteudo -->
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
