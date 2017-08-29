@@ -65,7 +65,6 @@
         <section id="team">
             <div class="container">
                 <div class="row container-equip">
-
                     <h2 class="text-center" style="color: grey;">Equipe</h2> <hr class="bottom-line3"><br><br>
                     <div class="col-md-3 member-team">
                         <img src="res/images/member1.jpg" alt=""/>
@@ -130,6 +129,25 @@
         <script src="res/scripts/jquery-3.2.1.min.js" type="text/javascript"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="res/scripts/bootstrap.min.js" type="text/javascript"></script>
-        
+        <script type="text/javascript">
+            var $doc = $('html, body');
+            $('#teamLink').click(function () {
+                $doc.animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 600);
+                return false;
+            });
+            function typeWritter(texto, idElemento, tempo) {
+                var char = texto.split('').reverse();
+                var typer = setInterval(function () {
+                    if (!char.length)
+                        return clearInterval(typer);
+                    var next = char.pop();
+                    document.getElementById(idElemento).innerHTML += next;
+                }, tempo);
+            }
+            typeWritter('Calculadora Juros', 'titleDi', 100);
+        </script>
+
     </body>
 </html>
