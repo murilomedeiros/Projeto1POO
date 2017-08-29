@@ -19,6 +19,23 @@ body{
     font-family: Helvetica,Arial,sans-serif;
 }
 
+.whiteC{
+    color: white;
+}
+
+.whiteCH{
+    color: white;
+}
+
+.whiteCH tbody tr:hover{
+    color: black;
+}
+
+.textCenter{
+    text-align: center;
+       
+}
+
 /* ---  Navbar ---*/
 
 #logo-img{
@@ -132,11 +149,12 @@ nav.navbar-transparent{
 }
 
 /* --- Footer --*/
-
 footer{
     background: #000;
     padding: 20px 0px 20px 0px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    max-height: 100px;
+    position: static;
 }
 
 .footer-bottom {
@@ -161,6 +179,47 @@ footer{
     float: left;
 }
 
+
+/* --- juros S --- */
+
+.text-coverR{
+    text-align: center;
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 5%;
+    width: 100%    
+}
+
+#calc{
+    margin-top: 80px;
+    padding: 0px  15% 0px 15%;
+}
+
+
+#text-interestS{
+    height: 100%;
+    margin-bottom: -90px;
+}
+
+#table-interestS{
+    margin-top: 20px;
+}
+
+#calculatorS{
+    margin-top: 50px;
+    margin-left: 5
+}
+/* --- juros C --- */
+
+#text-interestC{
+    height: 100%;
+}
+
+#table-interestC{
+    color: white;
+   margin-top: 150px;
+}
 
 
 

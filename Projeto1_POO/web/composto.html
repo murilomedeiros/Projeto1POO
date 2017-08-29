@@ -38,27 +38,83 @@
                         <li><a href="index.html#team">Equipe</a></li>
                         <li class="divisor" role="separator"></li>
                         <li><a href="simples.html">Juros Simples</a></li>
-                            <li><a href="composto.html">Juros Compostos</a></li>
+                        <li><a href="composto.html">Juros Compostos</a></li>
                     </ul>
                 </div>
             </div><!-- /container -->
         </nav><!-- /nav -->
 
-        <!-- texto capa -->
-        <section id="text-cover">
-            <div class="container cover">
+        <!-- calculadora -->
+        <section id="text-interestS">
+            <div id="calc" class="container-fluid">
+                <div id="calculatorS" class="col-md-12">
+                    <h1 id="titleDi" class="whiteC textCenter" ></h1><br>
+                     <h2 class="whiteC textCenter"><strong>J = P . i . n</strong></h2><br><br>
+                    <form class="form-inline" action="/action_page.php">
+                        <div class="form-group">
+                            <label class="whiteC" for="email">Capital:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Digite o capital" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label  class="whiteC" for="pwd">Taxa de Juros(%.a.m):</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Digite a taxa" name="pwd">
+                        </div>
+                        <div class="form-group">
+                            <label class="whiteC" for="pwd">Periodo(meses):</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Digite os meses" name="pwd">
+                        </div>
+                        <button type="submit" class="btn btn-warning">calcular</button><br><br><br><br>
+                    </form>
+                </div>
                 <div class="row">
                     <div class="col-md-12" >
-                        <div class="text-cover">
-                            <h1>Calculadora de Juros Composto</h1>
-                            <h3>Essa aplicacao WEB tem como finalidade calcular o montante de uma aplicacao inicial tanto aplicando em juros simples quanto juros composto.</h3>
-                        </div>
+                        <table  id="table-interestS" class="table table-hover table-condensed whiteCH">                           
+                            <thead>
+                                <tr>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John</td>
+                                    <td>Doe</td>
+                                    <td>john@example.com</td>
+                                </tr>
+                                <tr>
+                                    <td>Mary</td>
+                                    <td>Moe</td>
+                                    <td>mary@example.com</td>
+                                </tr>
+                                <tr>
+                                    <td>July</td>
+                                    <td>Dooley</td>
+                                    <td>july@example.com</td>
+                                </tr>
+                                <tr>
+                                    <td>John</td>
+                                    <td>Doe</td>
+                                    <td>john@example.com</td>
+                                </tr>
+                                <tr>
+                                    <td>Mary</td>
+                                    <td>Moe</td>
+                                    <td>mary@example.com</td>
+                                </tr>
+                                <tr>
+                                    <td>July</td>
+                                    <td>Dooley</td>
+                                    <td>july@example.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- /texto capa -->
-        
+            </div> 
+        </section> 
+        <!-- /calculadora -->
+        <!-- footer -->
         <footer id="footer">
             <div class="container" >
                 <div class="row">
@@ -90,5 +146,6 @@
 
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="res/scripts/bootstrap.min.js" type="text/javascript"></script>
+        
     </body>
 </html>
