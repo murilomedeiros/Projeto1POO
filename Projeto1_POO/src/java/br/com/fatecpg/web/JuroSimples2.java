@@ -80,8 +80,7 @@ public class JuroSimples2 extends HttpServlet {
                }    
             }
             catch(Exception Ex) {
-                out.println("<h3 style='color: red'>Ocorreu um erro</h3>");
-                out.println("<h2><a href='/Projeto1_POO/Home>Voltar </a></h2>'");
+                out.println("<h3 class='textCenter' style='color: red'>Ocorreu um erro</h3>");
             }
           
                 switch(base_tempo){
