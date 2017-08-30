@@ -216,6 +216,8 @@ footer{
     background-color: black;
     padding-top: 15px;
     min-height: 100px;
+    padding-left:5%;
+    padding-right: 5%;
 }
 
 /* --- juros S --- */
@@ -312,6 +314,16 @@ footer{
     padding-left: 10%;
     padding-right: 10%;
     
+}
+
+.graficos{
+    margin-top: 10px;
+    display: block;
+    height: 30%;
+    width: 70%;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
 }
 
 
