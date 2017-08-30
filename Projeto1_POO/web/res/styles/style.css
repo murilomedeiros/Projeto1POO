@@ -14,7 +14,7 @@ html, body, .cover{
 }
 
 body{
-/*    background: rgb(141,175,165);*/
+    /*    background: rgb(141,175,165);*/
     background: rgb(69,181,248);
     font-family: Helvetica,Arial,sans-serif;
 }
@@ -23,17 +23,17 @@ body{
     color: white;
 }
 
-.whiteCH{
-    color: white;
+.blackCH{
+    color: black;
 }
 
-.whiteCH tbody tr:hover{
-    color: black;
+.blackCH tbody tr:hover{
+    background-color: rgb(69, 181,248); 
 }
 
 .textCenter{
     text-align: center;
-       
+
 }
 
 /* ---  Navbar ---*/
@@ -44,9 +44,9 @@ body{
 }
 
 nav.navbar-transparent{
-     padding: 15px 0px;
-     background: rgba(0,0,0,0.6);
-     border: none;
+    padding: 15px 0px;
+    background: rgba(0,0,0,0.6);
+    border: none;
 }
 
 .navbar-brand{
@@ -78,7 +78,7 @@ nav.navbar-transparent{
 .cover{
     border: 1px;
     margin-bottom: 40px;
-    
+
 }
 
 .text-cover{
@@ -104,7 +104,7 @@ nav.navbar-transparent{
 }
 
 #btn-compound{
-    
+
 }
 
 /* --- Conteudo Team --*/
@@ -114,21 +114,21 @@ nav.navbar-transparent{
     background: rgb(240,240,240);
     padding-top: 105px;
     padding-bottom: 20px;
-        
+
 }
 
 .member-team{
-  background-color: white;  
-  color: grey;  
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
-  margin-left: 80px;
-  border-radius: 3%
+    background-color: white;  
+    color: grey;  
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+    margin-left: 80px;
+    border-radius: 3%
 }
 
 #team .member-team img{
     margin-top: 10px;
     width: 263px;
-    height: 300px;
+    height: 220px;
     border-radius: 10%;
     font-family: Helvetica,Arial,sans-serif;
 }
@@ -148,26 +148,26 @@ nav.navbar-transparent{
     margin-right: 5px;
 }
 .member-team {
-  -webkit-transition: all 1s ease;
-  /* Safari and Chrome */
-  -moz-transition: all 1s ease;
-  /* Firefox */
-  -o-transition: all 1s ease;
-  /* IE 9 */
-  -ms-transition: all 1s ease;
-  /* Opera */
-  transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    /* Safari and Chrome */
+    -moz-transition: all 1s ease;
+    /* Firefox */
+    -o-transition: all 1s ease;
+    /* IE 9 */
+    -ms-transition: all 1s ease;
+    /* Opera */
+    transition: all 1s ease;
 }
 .member-team:hover{
-  -webkit-transform: scale(1.15);
-  /* Safari and Chrome */
-  -moz-transform: scale(1.15);
-  /* Firefox */
-  -ms-transform: scale(1.15);
-  /* IE 9 */
-  -o-transform: scale(1.15);
-  /* Opera */
-  transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    /* Safari and Chrome */
+    -moz-transform: scale(1.15);
+    /* Firefox */
+    -ms-transform: scale(1.15);
+    /* IE 9 */
+    -o-transform: scale(1.15);
+    /* Opera */
+    transform: scale(1.15);
 }
 
 /* --- Footer --*/
@@ -187,7 +187,7 @@ footer{
     font-size: 13px;
     padding-top: 0px;
     padding-bottom: 1px;
-    
+
 }
 
 #footer ul {
@@ -201,6 +201,22 @@ footer{
     float: left;
 }
 
+#footer a{
+    color: white;
+}
+
+#footer a:hover{
+    color: Gray;
+    background: none;
+}
+#footer a:hover{
+    background-color: black;
+}
+#black{
+    background-color: black;
+    padding-top: 15px;
+    min-height: 100px;
+}
 
 /* --- juros S --- */
 
@@ -215,24 +231,67 @@ footer{
 
 #calc{
     margin-top: 80px;
-    padding: 0px  15% 0px 15%;
+    padding: 0px  15% 30px 15%;
 }
 
 
 #text-interestS{
     height: 100%;
-    margin-bottom: -90px;
+    margin-bottom: 100px;
+    width: 100%
 }
 
 #table-interestS{
     margin-top: 20px;
+    margin-bottom: 100px;
 }
 
 #calculatorS{
     margin-top: 50px;
-    margin-left: 5
+    margin-left: 5px;
+}
+
+#formS{
+    margin-top: 150px;
+    margin-left: 20px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+#formS input[type=number]{
+    width: 140px;
+} 
+
+#submit {
+    color: #fff;
+    font-size: 14px;
+    width: 80px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 10px;
+    background: rgb(240, 173, 78); 
+}
+
+#containerJ{
+    height: auto; 
+    background: rgb(240,240,240);
+    padding-top: 105px;
+    padding-bottom: 20px;
+    min-height: 700px;
+
 }
 /* --- juros C --- */
+
+
+#containerJC{
+    height: auto; 
+    background: rgb(240,240,240);
+    padding-top: 105px;
+    padding-bottom: 20px;
+    min-height: 700px;
+
+}
 
 #text-interestC{
     height: 100%;
@@ -240,25 +299,36 @@ footer{
 
 #table-interestC{
     color: white;
-   margin-top: 150px;
+    margin-top: 150px;
 }
 
+#formC input[type=number]{
+    width: 160px;
+} 
+
+#formC{
+    margin-top: 150px;
+    margin-left: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
 
 
 
 /* ======================  Formatcao de texto  ======================*/
 
 h1{
-   font-size: 550%;
-   font-weight: 700;
-   letter-spacing: -0.05em;
-   margin-bottom: 20px;
+    font-size: 550%;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
 }
 
 h3{
-   font-size: 150%;
-   font-weight: 500;
-   margin-bottom: 60px;
+    font-size: 150%;
+    font-weight: 500;
+    margin-bottom: 60px;
 }
 
 #footer h4 {
