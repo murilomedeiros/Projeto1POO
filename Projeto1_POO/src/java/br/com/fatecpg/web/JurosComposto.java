@@ -68,7 +68,7 @@ public class JurosComposto extends HttpServlet {
                     for (int i = 1; i <= p; i++) {
                         if (i == 1) {
                             out.println("<div class='row'>\n"
-                                    + "                    <div class='col-md-12' ><table id='table-interestS' class='table table-hover table-condensed blackCH'><thead><tr><th>Mês</th><th>Juros(R$)</th><th>Montante(R$)</th></tr></thead>");
+                                    + "                    <div class='col-md-12' ><table id='table-interestS' class='table table-hover table-condensed table-bordered table-striped blackCH'><thead><tr><th>Mês</th><th>Juros(R$)</th><th>Montante(R$)</th></tr></thead>");
                         }
                         out.println("<tbody><tr><td>" + i + "</td><td>" + new DecimalFormat("0.00").format(((j / 100) * m)) + "</td><td>" + new DecimalFormat("0.00").format(m + ((j / 100) * m)) + "</td></tr>");
                         m = m + ((j / 100) * m);
