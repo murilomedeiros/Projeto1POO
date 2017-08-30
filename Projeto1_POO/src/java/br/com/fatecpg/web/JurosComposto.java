@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "JurosComposto", urlPatterns = {"/juros-composto"})
 public class JurosComposto extends HttpServlet {
 //
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,53 +36,53 @@ public class JurosComposto extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Juros Composto</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<form>");
-            
-            out.println("<h1>Calculo de Juros Composto</h1>");
-            
-            out.println("Capital:\n"
-                    + "<input type='number' name='c' step='0.01' style='margin-right: 1%' required min='0.01'>");
-            
-            out.println("Taxa de Juros(%.a.m):\n"
-                    + "<input type='number' name='j' step='0.0001' style='margin-right: 1%' required min='0.0001'>");
-            
-            out.println("Periodo(Meses):\n"
-                    + "<input type='number' name='p' step='1' style='margin-right: 1%' required min='1'>");
-            
-            out.println("<input type='submit' value='Calcular'>");
-            
-            out.println("</form><br>");
+            out.println("<!DOCTYPE html><html lang='pt-br'> <head> <meta charset='utf-8'> <meta http-equiv='X-UA-Compatible' content='IE=edge'> <meta name='viewport' content='width=device-width, initial-scale=1'> <title>Calculadora Juros</title> <link rel='icon' href='res/images/calculator_46872.png'> <link href='res/styles/bootstrap.min.css' rel='stylesheet' type='text/css'/> <link href='res/styles/style.css' rel='stylesheet' type='text/css'/> </head> <body> <nav class='navbar navbar-fixed-top navbar-inverse navbar-transparent'> <div class='container'> <div class='navbar-header'> <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#nav-bar'> <span class='sr-only'>alterar navegacao</span> <span class='icon-bar'></span> <span class='icon-bar'></span> <span class='icon-bar'></span> </button> <a href='/Projeto1_POO/Home' class='navbar-brand'> <img id='logo-img' src='res/images/calculator_46872.png' alt=''> </a> </div><div class='collapse navbar-collapse' id='nav-bar'> <ul class='nav navbar-nav navbar-right'> <li><a href='/Projeto1_POO/Home'>Home</a></li><li><a id=\"aboutLink\" href='#text-interestS'>Sobre</a></li><li><a id=\"calGo\" href='#containerJC'>Calculadora</a></li><li class='divisor' role='separator'></li><li><a href='simples.html'>Juros Simples</a></li><li><a href='/Projeto1_POO/juros-composto'>Juros Compostos</a></li></ul> </div></div></nav> <section id='text-interestS'> <div id='calc' class='container-fluid'> <div id='calculatorS' class='col-md-12'> <h1 id='titleDi' class='whiteC textCenter' ></h1><br><h2 class='whiteC textCenter'>TEEEEEEEEEXTO DE EXPLICAAAAAAAAAAAAAAÇAO JUROS COMPOSSSSSSSSSSTO----------------------</h2><br><br><br><h2 class='whiteC textCenter'><strong>Fórmula: M=C * (1 + i)^t</strong></h2><br><h5 class='whiteC textCenter'>M: montante / C: capital / i: taxa de juros / t: tempo de aplicação</h5> </div></div></section> <section id='containerJC'> <div class='container'> <div class='row container-equip'> <h2 class='text-center'>Calculadora de Juros Composto</h2> <hr class='bottom-line3'>");
+            out.println("<form id='formC'class='form-inline'>");
+
+            out.println("<div class='form-group'><label'>Capital :</label>\n"
+                    + "<input type='number' name='c' step='0.01'  class='form-control' placeholder='R$' autocomplete='off' required> </div>");
+
+            out.println("<div class='form-group'>\n"
+                    + "                            <label'>Taxa de Juros :</label>\n"
+                    + "<input type='number' class='form-control' placeholder='%.a.m' name='j' step='0.0001' autocomplete='off'> </div>");
+
+            out.println("<div class='form-group'>\n"
+                    + "                            <label>Período :</label>\n"
+                    + "<input type='number' class='form-control' placeholder='Meses' name='p' step='1' autocomplete='off'>\n"
+                    + "                        </div>");
+
+            out.println("<input id='submit' type='submit' value='Calcular'><br><br><br><br>");
+
+            out.println("</form>\n" +
+"                </div>");
             double c, j, p, m;
-            p = 0; j = 0; m = 0;
-            try{
-               if(request.getParameter("c") != null && request.getParameter("j") != null && request.getParameter("p") != null) {
-                   c = Double.parseDouble(request.getParameter("c"));
-                   j = Double.parseDouble(request.getParameter("j"));
-                   p = Double.parseDouble(request.getParameter("p"));
-                   m = c;
-               }    
-            }
-            catch(Exception Ex) {
+            p = 0;
+            j = 0;
+            m = 0;
+            try {
+                if (request.getParameter("c") != null && request.getParameter("j") != null && request.getParameter("p") != null) {
+                    c = Double.parseDouble(request.getParameter("c"));
+                    j = Double.parseDouble(request.getParameter("j"));
+                    p = Double.parseDouble(request.getParameter("p"));
+                    m = c;
+                    for (int i = 1; i <= p; i++) {
+                        if (i == 1) {
+                            out.println("<div class='row'>\n"
+                                    + "                    <div class='col-md-12' ><table id='table-interestS' class='table table-hover table-condensed blackCH'><thead><tr><th>Mês</th><th>Juros(R$)</th><th>Montante(R$)</th></tr></thead>");
+                        }
+                        out.println("<tbody><tr><td>" + i + "</td><td>" + new DecimalFormat("0.00").format(((j / 100) * m)) + "</td><td>" + new DecimalFormat("0.00").format(m + ((j / 100) * m)) + "</td></tr>");
+                        m = m + ((j / 100) * m);
+                        if (i == p) {
+                            out.println("</tbody></table></div>\n"
+                                    + "                </div>");
+                        }
+                    }
+                }
+            } catch (Exception Ex) {
                 out.println("<h3 style='color: red'>Ocorreu um erro</h3>");
             }
-            
-            
-            for(int i = 1; i <= p; i++) {
-                if(i == 1)
-                    out.println("<table border='1' width='60%' style='text-align:center; margin-left: 20%'><tr><th>Mês</th><th>Juros(R$)</th><th>Montante(R$)</th></tr>");
-                out.println("<tr><td>"+ i +"</td><td>"+ new DecimalFormat("0.00").format(((j/100)*m)) +"</td><td>"+ new DecimalFormat("0.00").format(m + ((j/100)*m)) +"</td></tr>");
-                m = m + ((j/100)*m);
-                if(i == p)
-                    out.println("</table>");
-            }
-            out.println("</body>");
-            out.println("</html>");
+
+            out.println("</div></section> <div class='container-fluid' id='footer' > <div class='row' > <div class='col-md-12' id='black'> <div class='row'> <div class='col-md-4'> <img style='width: 40px; height: 40px' src='res/images/LogoTransp.png' alt=''/> </div><div class='col-md-6' style='margin-right: -5px; padding-left: 0px;'> <ul class='nav'> <li><a href='/Projeto1_POO/Home'>Home</a></li><li class='divisor' role='separator'></li><li><a href='/Projeto1_POO/Home#team'>Equipe</a></li><li class='divisor' role='separator'></li><li><a href='simples.html'>Juros Simples</a></li><li class='divisor' role='separator'></li><li><a href='/Projeto1_POO/juros-composto'>Juros Compostos</a></li></ul> </div></div><p class='text-center'>Copyright&copy; 2017 - Desenvolvido pela TGS</p></div></div></div><script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script> <script src='res/scripts/bootstrap.min.js' type='text/javascript'></script> <script type='text/javascript'> var $doc=$('html, body'); $('#aboutLink').click(function (){$doc.animate({scrollTop: $($.attr(this, 'href')).offset().top}, 600); return false;}); $('#calGo').click(function (){$doc.animate({scrollTop: $($.attr(this, 'href')).offset().top}, 600); return false;}); function typeWritter(texto, idElemento, tempo){var char=texto.split('').reverse(); var typer=setInterval(function (){if (!char.length) return clearInterval(typer); var next=char.pop(); document.getElementById(idElemento).innerHTML +=next;}, tempo);}typeWritter('Juros Compostos', 'titleDi', 100); </script> </body></html>");
         }
     }
 
