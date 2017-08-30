@@ -46,13 +46,13 @@ public class JurosComposto extends HttpServlet {
             out.println("<h1>Calculo de Juros Composto</h1>");
             
             out.println("Capital:\n"
-                    + "<input type='number' name='c' step='0.01' style='margin-right: 1%' required>");
+                    + "<input type='number' name='c' step='0.01' style='margin-right: 1%' required min='0.01'>");
             
             out.println("Taxa de Juros(%.a.m):\n"
-                    + "<input type='number' name='j' step='0.0001' style='margin-right: 1%' required>");
+                    + "<input type='number' name='j' step='0.0001' style='margin-right: 1%' required min='0.0001'>");
             
             out.println("Periodo(Meses):\n"
-                    + "<input type='number' name='p' step='1' style='margin-right: 1%' required>");
+                    + "<input type='number' name='p' step='1' style='margin-right: 1%' required min='1'>");
             
             out.println("<input type='submit' value='Calcular'>");
             
